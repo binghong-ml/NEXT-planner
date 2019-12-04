@@ -24,11 +24,15 @@ NEXT is 20x more sample efficient than traditional planners.
 
 The path planning problem is to find a valid path from the robot's initial state to the goal state. It is a fundamental problem with many real-world applications, such as autonomous driving and robot manipulations. The simplest example is to navigate a "dot" robot through a maze (Figure 1). In more complicated problems where the robot is no longer a dot, we need more parameters to describe the robot state (configuration), i.e. the robot's orientation, angles of every joints etc.
 
+| <img width="230" height="230" src="./figures/2d_path.png"> |
+|:--:|
+| Figure 1: *"Dot" robot planning* |
+
 For instance, suppose we have a "stick" robot in Figure 2, we need to consider the rotation as an extra dimension of the state. The real state space where we conduct planning is shown in Figure 3, whose information cannot be fully captured by only the workspace map.
 
-| <img width="230" height="230" src="./figures/2d_path.png"> | <img width="335" height="250" src="./figures/Example_workspace.png"> | <img width="310" height="250" src="./figures/Example_configspace.png"> | 
-|:--:|:--:|:--:|
-| Figure 1: *"Dot" robot planning* | Figure 2: *"Stick" robot workspace* | Figure 3: *"Stick" robot state space* |
+| <img width="310" height="230" src="./figures/Example_workspace.png"> | <img width="280" height="230" src="./figures/Example_configspace.png"> | 
+|:--:|:--:|
+| Figure 2: *"Stick" robot workspace* | Figure 3: *"Stick" robot state space* |
 
 #### Sampling-based Planners
 
@@ -44,7 +48,7 @@ People resort to sampling-based algorithms for planning in high-dimensional stat
 
 Instead of random search, NEXT learns neural priors to guide the tree search. In each iteration of tree expansion, a node is selected based on its value and expanded with its policy, as illustrated in Figure 5. The value and policy are neural priors learned from previous planning experiences. 
 
-| <img width="750" height="360" src="./figures/illustration_v4.png"> | 
+| <img width="600" height="288" src="./figures/illustration_v4.png"> | 
 |:--:| 
 | Figure 5: *NEXT workflow* |
 
@@ -63,7 +67,7 @@ We compare search tree produced by traditional algorithms and NEXT on the same p
 |:--:|:--:|
 | Figure 8: *RRT search tree for stick robot* | Figure 9: *NEXT search tree for stick robot* |
 
-| <img width="320" height="240" src="./figures/7d_search_tree_rrts.png"> | <img width="320" height="240" src="./figures/7d_search_tree_NEXT.png"> |
+| <img width="280" height="210" src="./figures/7d_search_tree_rrts.png"> | <img width="280" height="210" src="./figures/7d_search_tree_NEXT.png"> |
 |:--:|:--:|
 | Figure 10: *RRT search tree for spacecraft* | Figure 11: *NEXT search tree for spacecraft* |
 
